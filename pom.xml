@@ -23,4 +23,27 @@
             </plugins>
         </pluginManagement>
     </build>
+
+<dependencies>
+    <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>8.0.15</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+
+    <!--biblioteka hibernate potrzebuje sterownika do bazy danych tj mysql-connector-->
+    <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-core</artifactId>
+        <version>5.4.1.Final</version>
+    </dependency>
+
+
+</dependencies>
+
+
+
+
 </project>

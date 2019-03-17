@@ -14,8 +14,8 @@
     <Label layoutX="182.0" layoutY="97.0" text="Login" />
     <Label layoutX="171.0" layoutY="192.0" text="Password" />
     <Button fx:id="btnShow" layoutX="297.0" layoutY="214.0" mnemonicParsing="false" onMouseClicked="#ShowEvent" text="SHOW" />
-    <Button fx:id="btnSignIn" layoutX="171.0" layoutY="281.0" mnemonicParsing="false" onMouseClicked="#SignInEvent" text="GUEST" />
-    <Button fx:id="btnGuest" layoutX="245.0" layoutY="281.0" mnemonicParsing="false" onMouseClicked="#guestEvent" text="SIGN-IN" />
+    <Button fx:id="btnGuest" layoutX="171.0" layoutY="281.0" mnemonicParsing="false" onMouseClicked="#guestEvent" text="GUEST" />
+    <Button fx:id="btnSignIn" layoutX="245.0" layoutY="281.0" mnemonicParsing="false" onMouseClicked="#SignInEvent" text="SIGN-IN" />
     <Button fx:id="btnLogin" layoutX="96.0" layoutY="281.0" mnemonicParsing="false" onMouseClicked="#loginEvent" text="LOGIN" />
 </children>
 </AnchorPane>

@@ -7,10 +7,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.InputEvent;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import pl.pwn.reaktor.dziekanat.DziekanatMain;
+
+import java.io.IOException;
 
 public class DziekanatController {
 
@@ -38,6 +42,7 @@ public class DziekanatController {
     @FXML
     void ShowEvent(MouseEvent event) {
 
+
         if("SHOW".equalsIgnoreCase(btnShow.getText())){
             tfPassword.setText(pfPassword.getText());
             tfPassword.setVisible(true);
@@ -58,12 +63,17 @@ public class DziekanatController {
     }
 
     @FXML
-    void guestEvent(MouseEvent event) {
+    void guestEvent(MouseEvent event) throws Exception {
 
+        Stage primaryStage = DziekanatMain.getPriamryStage();
+        Parent root = FXMLLoader.load(getClass().getResource("/view/guestView.fxml"));
+        primaryStage.setTitle("Guest view");
+        primaryStage.setScene((new Scene(root)));
+        primaryStage.show();
     }
 
     @FXML
-    void loginEvent(MouseEvent event) throws Exception {
+    void loginEvent(InputEvent event) throws IOException {
 
         Stage primaryStage = DziekanatMain.getPriamryStage();
         Parent root = FXMLLoader.load(getClass().getResource("/view/userView.fxml"));
@@ -73,7 +83,14 @@ public class DziekanatController {
     }
 
     @FXML
-    void loginKeyAction(KeyEvent event) {
+    void loginKeyAction(KeyEvent event) throws IOException {
+
+        if(KeyCode.ENTER.equals(event.getCode())){
+
+            loginEvent(event);
+
+
+        }
 
     }
 
