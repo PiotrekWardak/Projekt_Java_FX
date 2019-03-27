@@ -23,6 +23,7 @@
             </plugins>
         </pluginManagement>
     </build>
+    <!--to wyzej dodajemy tylko dlatego zeby dzialolo na tej wersji intellij-->
 
 <dependencies>
     <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
@@ -38,6 +39,15 @@
         <groupId>org.hibernate</groupId>
         <artifactId>hibernate-core</artifactId>
         <version>5.4.1.Final</version>
+    </dependency>
+
+    <!--dodajemy lomboka teraz(dodatkowe adnotacje)-->
+    <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+    <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>1.18.6</version>
+        <scope>provided</scope>
     </dependency>
 
 

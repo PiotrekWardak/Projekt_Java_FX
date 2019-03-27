@@ -7,6 +7,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.mapping.MetadataSource;
 import org.hibernate.service.ServiceRegistry;
+import pl.pwn.reaktor.dziekanat.model.User;
 
 
 public class HibernateUtils {
@@ -39,7 +40,7 @@ public class HibernateUtils {
             //musimy dla każdej Entity (encji) dodawac nowy wpis zeby dzialalo/
 //            MetadataSources sources = new MetadataSources(serviceRegistry).addAnnotatedClass("nasz model".class)
 
-            MetadataSources sources = new MetadataSources(serviceRegistry);
+            MetadataSources sources = new MetadataSources(serviceRegistry).addAnnotatedClass(User.class);
 
             Metadata metadata = sources.getMetadataBuilder().build();
 
