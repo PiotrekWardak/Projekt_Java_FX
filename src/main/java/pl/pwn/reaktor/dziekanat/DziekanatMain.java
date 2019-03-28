@@ -11,11 +11,11 @@ public class DziekanatMain extends Application {
 
 
 
-    private static Stage priamryStage;
+    private static Stage primaryStage;
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        setPriamryStage(primaryStage);
+        setPrimaryStage(primaryStage);
         Parent root = FXMLLoader.load(getClass().getResource("/view/dziekanatView.fxml"));
         primaryStage.setTitle("Dziekanat");
         primaryStage.setScene((new Scene(root)));
@@ -25,18 +25,18 @@ public class DziekanatMain extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    public static Stage getPriamryStage() {
-        return priamryStage;
+    public static Stage getPrimaryStage() {
+        return primaryStage;
     }
 
-    private static void setPriamryStage(Stage priamryStage) {
-        DziekanatMain.priamryStage = priamryStage;
+    private static void setPrimaryStage(Stage primaryStage) {
+        DziekanatMain.primaryStage = primaryStage;
     }
 
     @Override
     public void init() throws Exception{
         super.init();
-        System.out.println("Metoda init uruchamiana tylko raz przy starcie projketu");
+        System.out.println("Metoda init uruchamiana tylko raz przy starcie projektu");
         HibernateUtils.initSessionFactory();
     }
     @Override

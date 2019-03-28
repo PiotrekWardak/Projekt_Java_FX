@@ -34,7 +34,7 @@ public class DziekanatController {
     private Button btnShow;
 
     @FXML
-    private Button btnSignIn;
+    private Button btnSignUp;
 
     @FXML
     private Button btnGuest;
@@ -61,14 +61,20 @@ public class DziekanatController {
     }
 
     @FXML
-    void SignInEvent(MouseEvent event) {
+    void SignUpEvent(MouseEvent event) throws Exception {
+
+        Stage primaryStage = DziekanatMain.getPrimaryStage();
+        Parent root = FXMLLoader.load(getClass().getResource("/view/signUpView.fxml"));
+        primaryStage.setTitle("Sign up");
+        primaryStage.setScene((new Scene(root)));
+        primaryStage.show();
 
     }
 
     @FXML
     void guestEvent(MouseEvent event) throws Exception {
 
-        Stage primaryStage = DziekanatMain.getPriamryStage();
+        Stage primaryStage = DziekanatMain.getPrimaryStage();
         Parent root = FXMLLoader.load(getClass().getResource("/view/guestView.fxml"));
         primaryStage.setTitle("Guest view");
         primaryStage.setScene((new Scene(root)));
@@ -91,7 +97,7 @@ public class DziekanatController {
 
             if(RoleEnum.ROLE_STUDENT.equals(role))
             {
-                Stage primaryStage = DziekanatMain.getPriamryStage();
+                Stage primaryStage = DziekanatMain.getPrimaryStage();
                 Parent root = FXMLLoader.load(getClass().getResource("/view/userView.fxml"));
                 primaryStage.setTitle("User view");
                 primaryStage.setScene((new Scene(root)));
