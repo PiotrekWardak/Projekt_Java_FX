@@ -8,13 +8,9 @@ package pl.pwn.reaktor.dziekanat.controller;
         import javafx.scene.control.TextField;
         import javafx.scene.input.MouseEvent;
         import javafx.stage.Stage;
-        import org.hibernate.Session;
-        import org.hibernate.Transaction;
-        import org.hibernate.query.Query;
         import pl.pwn.reaktor.dziekanat.DziekanatMain;
-        import pl.pwn.reaktor.dziekanat.model.RoleEnum;
-        import pl.pwn.reaktor.dziekanat.model.User;
-        import pl.pwn.reaktor.dziekanat.utils.HibernateUtils;
+        import pl.pwn.reaktor.dziekanat.service.SignUpService;
+
 
 public class SignUpController {
 
@@ -35,19 +31,10 @@ public class SignUpController {
 
         String login = tfNewLogin.getText();
         String pass =tfNewPassword.getText();
-        System.out.println(login);
-        System.out.println(pass);
 
-        User user = new User(login, pass, RoleEnum.ROLE_STUDENT, true);
+        long id = SignUpService.addToDB(login,pass);
+        System.out.println("DOdano użytkownika o id: "+ id);
 
-        Session session = HibernateUtils.getSessionFactory().openSession();
-
-        Transaction transaction = session.beginTransaction();
-
-        session.save(user);
-
-        transaction.commit();
-        session.close();
 
     }
 
