@@ -4,12 +4,19 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
+import pl.pwn.reaktor.dziekanat.DziekanatMain;
 import pl.pwn.reaktor.dziekanat.model.User;
 import pl.pwn.reaktor.dziekanat.model.dto.StudentDTO;
+import pl.pwn.reaktor.dziekanat.model.utils.CurrentUser;
 import pl.pwn.reaktor.dziekanat.service.UserService;
 
 import java.util.List;
@@ -68,17 +75,26 @@ public class AdminController {
 
     @FXML
     void aboutAction(ActionEvent event) {
-
+    Alert info = new Alert(Alert.AlertType.INFORMATION);
+    info.setTitle("About");
+    info.setHeaderText("Instruction");
+    info.setContentText("Instruction for using the form ...");
+    info.show();
     }
 
     @FXML
     void closeAction(ActionEvent event) {
-
+    System.exit(0);
     }
 
     @FXML
-    void logoutAction(ActionEvent event) {
-
+    void logoutAction(ActionEvent event) throws Exception {
+        CurrentUser.clean();
+        Stage primaryStage = DziekanatMain.getPrimaryStage();
+        Parent root = FXMLLoader.load(getClass().getResource("/view/dziekanatView.fxml"));
+        primaryStage.setTitle("Logowanie");
+        primaryStage.setScene((new Scene(root)));
+        primaryStage.show();
 
     }
 
@@ -101,7 +117,6 @@ public class AdminController {
         colLastNameS.setCellValueFactory(new PropertyValueFactory<>("lastName"));
         colStreetS.setCellValueFactory(new PropertyValueFactory<>("street"));
         colCityS.setCellValueFactory(new PropertyValueFactory<>("city"));
-
 
     }
 

@@ -8,5 +8,6 @@
    <children>
       <Label fx:id="lbLogin" layoutX="94.0" layoutY="106.0" prefHeight="17.0" prefWidth="212.0" text="Witaj:" />
       <Button fx:id="btnUpdateData" layoutX="167.0" layoutY="250.0" mnemonicParsing="false" onMouseClicked="#UpdateDataEvent" text="Update Data" />
+      <Button fx:id="btnSurvey" layoutX="167.0" layoutY="296.0" mnemonicParsing="false" onMouseClicked="#SurveyEvent" prefHeight="25.0" prefWidth="83.0" text="Survey" />
    </children>
 </AnchorPane>
