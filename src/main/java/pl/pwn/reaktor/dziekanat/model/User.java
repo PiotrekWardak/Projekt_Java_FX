@@ -18,7 +18,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private int id;
 
     private String login;
 
@@ -28,6 +28,10 @@ public class User {
     private RoleEnum role;
 
     private boolean active;
+
+    @OneToOne
+    @JoinColumn(name = "nasz_student")
+    private Student student;
 
     public String getLogin() {
         return login;

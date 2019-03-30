@@ -9,7 +9,7 @@ package pl.pwn.reaktor.dziekanat.controller;
         import javafx.scene.input.MouseEvent;
         import javafx.stage.Stage;
         import pl.pwn.reaktor.dziekanat.DziekanatMain;
-        import pl.pwn.reaktor.dziekanat.service.SignUpService;
+        import pl.pwn.reaktor.dziekanat.service.UserService;
 
 
 public class SignUpController {
@@ -32,7 +32,7 @@ public class SignUpController {
         String login = tfNewLogin.getText();
         String pass =tfNewPassword.getText();
 
-        long id = SignUpService.addToDB(login,pass);
+        long id = UserService.addToDB(login,pass);
         System.out.println("DOdano użytkownika o id: "+ id);
 
 

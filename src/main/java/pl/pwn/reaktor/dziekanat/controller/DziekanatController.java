@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 import pl.pwn.reaktor.dziekanat.DziekanatMain;
 import pl.pwn.reaktor.dziekanat.model.RoleEnum;
 import pl.pwn.reaktor.dziekanat.model.User;
+import pl.pwn.reaktor.dziekanat.model.utils.CurrentUser;
 import pl.pwn.reaktor.dziekanat.service.LoginService;
 
 import java.io.IOException;
@@ -95,11 +96,21 @@ public class DziekanatController {
             RoleEnum role = user.getRole();
             System.out.println("Zalogowano użytkownika: "+ login + " o roli: " + role);
 
+            CurrentUser.setCurrentUser(user);
+
             if(RoleEnum.ROLE_STUDENT.equals(role))
             {
                 Stage primaryStage = DziekanatMain.getPrimaryStage();
                 Parent root = FXMLLoader.load(getClass().getResource("/view/userView.fxml"));
                 primaryStage.setTitle("User view");
+                primaryStage.setScene((new Scene(root)));
+                primaryStage.show();
+            }
+            else if(RoleEnum.ROLE_ADMIN.equals(role))
+            {
+                Stage primaryStage = DziekanatMain.getPrimaryStage();
+                Parent root = FXMLLoader.load(getClass().getResource("/view/adminView.fxml"));
+                primaryStage.setTitle("Admin view");
                 primaryStage.setScene((new Scene(root)));
                 primaryStage.show();
             }

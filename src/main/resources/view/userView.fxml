@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.pwn.reaktor.dziekanat.controller.UserController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#UpdateDataEvent" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.pwn.reaktor.dziekanat.controller.UserController">
    <children>
-      <Label layoutX="174.0" layoutY="192.0" text="User VIew" />
+      <Label fx:id="lbLogin" layoutX="94.0" layoutY="106.0" prefHeight="17.0" prefWidth="212.0" text="Witaj:" />
+      <Button fx:id="btnUpdateData" layoutX="167.0" layoutY="250.0" mnemonicParsing="false" onMouseClicked="#UpdateDataEvent" text="Update Data" />
    </children>
 </AnchorPane>
